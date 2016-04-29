@@ -1,5 +1,7 @@
+#ifndef JOY_CORE_H
+#define JOY_CORE_H
+
 #include "ros/ros.h"
-#include <thread>
 #include "tortuga_node.h"
 #include "sensor_msgs/Joy.h"
 #include "std_msgs/Float64MultiArray.h"
@@ -7,17 +9,20 @@
 
 class JoyReader : public TortugaNode {
 
- public:
-  JoyReader(int, char**, int);
-  ~JoyReader();
+ 	public:
+  		JoyReader(int, char**, int);
+  		~JoyReader();
+		
+		void update();
+		void publish();
 
-  ros::NodeHandle n;
-
-  ros::Subscriber subscriber;
-  ros::Publisher publisher;
-
-  void update();
-  void publish();
-  void joyPub(const std_msgs::Float64MultiArray );
+	private:
+  		ros::NodeHandle n;
+		float x, y, z, mag;
+  		ros::Subscriber subscriber;
+  		ros::Publisher publisher;
+  		void joyPub(const sensor_msgs::Joy::ConstPtr &);
 
 };
+
+#endif

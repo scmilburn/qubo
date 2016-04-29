@@ -9,4 +9,12 @@
   <node name="temp_node" pkg="qubo_vehicle_layer" type="temp_node" args="tortuga"/>
   <node name="thruster_node" pkg="qubo_vehicle_layer" type="thruster_node" args="tortuga"/>
   <node name="movement_node" pkg="qubo_vehicle_layer" type="thruster_node" args="tortuga"/>
+
+
+  <node name="joy_node" type="qubo_teleop_joy" name="teleop">
+  <node respawn="true" pkg="joy"
+        type="joy" name="joy_node" >
+    <param name="dev" type="string" value="/dev/input/js0" />
+    <param name="deadzone" value="0.12" />
+  </node>
 </launch>
