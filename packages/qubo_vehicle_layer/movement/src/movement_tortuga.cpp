@@ -7,8 +7,8 @@
  *------------------------------------------------------------------*/
 
 moveNode::moveNode(int argc, char **argv, int inputRate):TortugaNode() {
-	ros::Rate loop_rate(rate);
-	thrust_pub = n.advertise<std_msgs::Int64MultiArray>("/qubo/thruster_input", 1);
+	//ros::Rate loop_rate(rate);
+	thrust_pub = n.advertise<std_msgs::Int64MultiArray>("/qubo/thruster_input", 10);
 	joystick_sub = n.subscribe<std_msgs::Float64MultiArray>("/joy_pub", 10, &moveNode::messageCallback, this);  
 
 } // end moveNode()
