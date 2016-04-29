@@ -6,7 +6,6 @@
 #include "std_msgs/Float64MultiArray.h"
 #include "std_msgs/Int64MultiArray.h"
 //#include "tortuga/sensorapi.h"
-#include "tortuga/thrusterapi.h"
 
 
 // Custom message includes. Auto-generated from msg/ directory.
