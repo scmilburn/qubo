@@ -95,6 +95,7 @@ set(MOVEMENT_SRC_FILES
 set(JOYSTICK_SRC_FILES
   joystick/src/main.cpp
   joystick/src/JoyReader.cpp
+ )
 
 set(SENSOR_BOARD_SRC_FILES
   sensor_board/src/main.cpp
@@ -134,16 +135,15 @@ target_link_libraries(camera_node ${catkin_LIBRARIES})
 add_executable(thruster_node ${THRUSTER_SRC_FILES})
 target_link_libraries(thruster_node ${catkin_LIBRARIES})
 
-<<<<<<< HEAD
 add_executable(move_node ${MOVEMENT_SRC_FILES})
 target_link_libraries(move_node ${catkin_LIBRARIES})
 
 add_executable(joy_node ${JOYSTICK_SRC_FILES})
 target_link_libraries(move_node ${catkin_LIBRARIES})
-=======
+
 add_executable(sensor_board_node ${SENSOR_BOARD_SRC_FILES})
 target_link_libraries(sensor_board_node ${catkin_LIBRARIES})
->>>>>>> 8f52a71c271daac10d02eba709c24d85d1b52b02
+
 
 
 ##############################

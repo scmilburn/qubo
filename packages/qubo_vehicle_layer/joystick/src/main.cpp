@@ -7,7 +7,8 @@
 
 int main(int argc, char **argv){
 
-    std::unique_ptr<QuboNode> node;
+    ros::init(argc, argv, "joy_node");
+	std::unique_ptr<QuboNode> node;
     
    // if(strcmp(argv[1], "tortuga") == 0) {
         node.reset(new JoyReader(argc, argv, 10));

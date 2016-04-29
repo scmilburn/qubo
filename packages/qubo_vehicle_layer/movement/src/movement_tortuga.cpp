@@ -59,23 +59,23 @@ void moveNode::messageCallback(const std_msgs::Float64MultiArray::ConstPtr &msg)
 	int MAX_THRUSTER = 255; 
 
 	if (z_dir = 0) {
-		thrstr_1_spd = MAX_THRUSTER / 2;
-		thrstr_2_spd = MAX_THRUSTER / 2;
+		thrstr_6_spd = MAX_THRUSTER / 2;
+		thrstr_4_spd = MAX_THRUSTER / 2;
 				
 	} else if (z_dir > 0) {
-		thrstr_1_spd = MAX_THRUSTER / 3;
-                thrstr_2_spd = MAX_THRUSTER / 3;	
+		thrstr_6_spd = MAX_THRUSTER / 3;
+                thrstr_4_spd = MAX_THRUSTER / 3;	
 
 	} else {
-		thrstr_1_spd = MAX_THRUSTER * 2 / 3;
-                thrstr_2_spd = MAX_THRUSTER * 2 / 3;
+		thrstr_6_spd = MAX_THRUSTER * 2 / 3;
+                thrstr_4_spd = MAX_THRUSTER * 2 / 3;
 	}
 
 	thrstr_3_spd = MAX_THRUSTER * x_dir / mag;
-	thrstr_4_spd = -MAX_THRUSTER * x_dir / mag;
+	thrstr_5_spd = -MAX_THRUSTER * x_dir / mag;
 
-	thrstr_5_spd = MAX_THRUSTER * y_dir / mag;	
-	thrstr_6_spd = MAX_THRUSTER * y_dir / mag;
+	thrstr_1_spd = MAX_THRUSTER * y_dir / mag;	
+	thrstr_2_spd = MAX_THRUSTER * y_dir / mag;
 } // end messageCallback
 
 void moveNode::publish() {}

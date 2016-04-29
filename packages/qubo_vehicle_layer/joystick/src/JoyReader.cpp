@@ -2,7 +2,7 @@
 
 JoyReader::JoyReader(int argc, char **argv, int rate):TortugaNode() {
     ros::Rate loop_rate(rate);
-    subscriber = n.subscribe("joy", 1000, &JoyReader::joyPub, this);
+    subscriber = n.subscribe<sensor_msgs::Joy>("joy", 1000, &JoyReader::joyPub, this);
     publisher = n.advertise<std_msgs::Float64MultiArray>("/joy_pub", 1000);
 }
 
