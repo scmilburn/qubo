@@ -28,7 +28,6 @@ moveNode::~moveNode() {
  * Publish the message.
  *------------------------------------------------------------------*/
 void moveNode::update() {
-	ros::spinOnce();
 	
 	std_msgs::Int64MultiArray final_thrust;
 	final_thrust.layout.dim.resize(1);
@@ -44,7 +43,10 @@ void moveNode::update() {
 	final_thrust.data[4] = thrstr_5_spd;
 	final_thrust.data[5] = thrstr_6_spd;
 
-  	thrust_pub.publish(final_thrust);	
+  	thrust_pub.publish(final_thrust);
+
+	ros::spinOnce();
+	ros::Duration(0.1).sleep();	
 } //end update()
 
 /*--------------------------------------------------------------------

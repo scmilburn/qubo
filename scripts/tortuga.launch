@@ -8,13 +8,11 @@
   <node name="led_node" pkg="qubo_vehicle_layer" type="led_node" args="tortuga" />
   <node name="power_node" pkg="qubo_vehicle_layer" type="power_node" args="tortuga"/>
   <node name="temp_node" pkg="qubo_vehicle_layer" type="temp_node" args="tortuga"/>
-  <node name="movement_node" pkg="qubo_vehicle_layer" type="movement_node" args="tortuga"/>
-  <node name="thruster_node" pkg="qubo_vehicle_layer" type="thruster_node" args="tortuga" output="log"/>
-  
-  <node name="joy_node" pkg="qubo_vehicle_layer" type="joy_node" args="tortuga">
-  <param name="dev" type="string" value="/dev/input/js0" />
-    <param name="deadzone" value="0.12" />
-  </node>
+  <node name="thruster_node" pkg="qubo_vehicle_layer" type="thruster_node" args="tortuga"/>
+  <node name="joy_node" pkg="joy" type="joy_node" />
+  <node name="JoyReader" pkg="qubo_vehicle_layer" type="JoyReader" />
+  <node name="move_node" pkg="qubo_vehicle_layer" type="move_node" />
+
 
 </launch>
 <!--change "log" to "screen" to move debug to stdout.-->
