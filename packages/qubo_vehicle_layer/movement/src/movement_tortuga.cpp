@@ -9,7 +9,7 @@
 moveNode::moveNode(int argc, char **argv, int inputRate):TortugaNode() {
 	ros::Rate loop_rate(rate);
 	thrust_pub = n.advertise<std_msgs::Int64MultiArray>("/qubo/thruster_input", 1);
-	joystick_sub = n.subscribe<std_msgs::Float64MultiArray>("/joy_pub", 1000, &moveNode::messageCallback, this);  
+	joystick_sub = n.subscribe<std_msgs::Float64MultiArray>("/joy_pub", 10, &moveNode::messageCallback, this);  
 
 } // end moveNode()
 
@@ -31,7 +31,8 @@ void moveNode::update() {
 	ros::spinOnce();
 	
 	std_msgs::Int64MultiArray final_thrust;
-
+	final_thrust.layout.dim.resize(1);
+	final_thrust.data.resize(6);
 	final_thrust.layout.dim[0].label = "Thrust";
 	final_thrust.layout.dim[0].size = 6;
 	final_thrust.layout.dim[0].stride = 6;

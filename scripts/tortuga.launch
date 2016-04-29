@@ -10,9 +10,11 @@
   <node name="temp_node" pkg="qubo_vehicle_layer" type="temp_node" args="tortuga"/>
   <node name="movement_node" pkg="qubo_vehicle_layer" type="movement_node" args="tortuga"/>
   <node name="thruster_node" pkg="qubo_vehicle_layer" type="thruster_node" args="tortuga" output="log"/>
+  
   <node name="joy_node" pkg="qubo_vehicle_layer" type="joy_node" args="tortuga">
   <param name="dev" type="string" value="/dev/input/js0" />
     <param name="deadzone" value="0.12" />
   </node>
+
 </launch>
 <!--change "log" to "screen" to move debug to stdout.-->

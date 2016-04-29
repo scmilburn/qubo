@@ -17,6 +17,7 @@ class JoyReader : public TortugaNode {
 		void publish();
 
 	private:
+//		ros::Rate loop_rate;
   		ros::NodeHandle n;
 		float x, y, z, mag;
   		ros::Subscriber subscriber;

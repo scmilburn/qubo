@@ -138,8 +138,8 @@ target_link_libraries(thruster_node ${catkin_LIBRARIES})
 add_executable(move_node ${MOVEMENT_SRC_FILES})
 target_link_libraries(move_node ${catkin_LIBRARIES})
 
-add_executable(joy_node ${JOYSTICK_SRC_FILES})
-target_link_libraries(joy_node ${catkin_LIBRARIES})
+add_executable(JoyReader ${JOYSTICK_SRC_FILES})
+target_link_libraries(JoyReader ${catkin_LIBRARIES})
 
 add_executable(sensor_board_node ${SENSOR_BOARD_SRC_FILES})
 target_link_libraries(sensor_board_node ${catkin_LIBRARIES})
