@@ -37,7 +37,9 @@ include_directories(
   temperature/include
   camera/include
   thrusters/include
-  )
+  movement/include 
+  joystick/include 
+)
 
 set(DEPTH_SRC_FILES
   depth_sensor/src/main.cpp
@@ -84,6 +86,15 @@ set(THRUSTER_SRC_FILES
   thrusters/src/thruster_tortuga.cpp
   )
 
+set(MOVEMENT_SRC_FILES
+  movement/src/main.cpp
+  movement/src/movement_tortuga.cpp
+  )
+
+set(JOYSTICK_SRC_FILES
+  joystick/src/main.cpp
+  joystick/src/JoyReader.cpp
+  )
 
 set(TEST_FILES
   
@@ -118,8 +129,11 @@ target_link_libraries(camera_node ${catkin_LIBRARIES})
 add_executable(thruster_node ${THRUSTER_SRC_FILES})
 target_link_libraries(thruster_node ${catkin_LIBRARIES})
 
+add_executable(move_node ${MOVEMENT_SRC_FILES})
+target_link_libraries(move_node ${catkin_LIBRARIES})
 
-
+add_executable(joy_node ${JOYSTICK_SRC_FILES})
+target_link_libraries(move_node ${catkin_LIBRARIES})
 
 
 ##############################

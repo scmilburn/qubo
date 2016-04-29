@@ -1,9 +1,8 @@
 #include "ros/ros.h"
-#include <iostream>
-#include "std_msgs/String.h"
-#include <sstream>
 #include <thread>
+#include "tortuga_node.h"
 #include "sensor_msgs/Joy.h"
+#include "std_msgs/Float64MultiArray.h"
 
 
 class JoyReader : public TortugaNode {
@@ -12,8 +11,13 @@ class JoyReader : public TortugaNode {
   JoyReader(int, char**, int);
   ~JoyReader();
 
+  ros::NodeHandle n;
+
+  ros::Subscriber subscriber;
+  ros::Publisher publisher;
+
   void update();
   void publish();
   void joyPub(const std_msgs::Float64MultiArray );
 
-}
+};

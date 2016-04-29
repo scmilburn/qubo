@@ -1,4 +1,4 @@
-/*This class takes joystick inputs and converts them to velocity in R3. */
+#include "JoyReader.h"
 
 JoyReader::ThrusterTortugaNode(int argc, char **argv, int rate): TortugaNode(){
     ros::Rate loop_rate(rate);
