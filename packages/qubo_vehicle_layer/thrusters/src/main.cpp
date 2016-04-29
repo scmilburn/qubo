@@ -31,14 +31,14 @@ int main(int argc, char **argv){
     
     std::unique_ptr<QuboNode> node;
    
-    if(strcmp(argv[1], "simulated") == 0){
-        node.reset(new ThrusterSimNode(argc, argv, 10)); /** 10 (the rate) is completely arbitrary */
-    }else if(strcmp(argv[1], "tortuga") == 0) {
+    //if(strcmp(argv[1], "simulated") == 0){
+        //node.reset(new ThrusterSimNode(argc, argv, 10)); /** 10 (the rate) is completely arbitrary */
+    //}else if(strcmp(argv[1], "tortuga") == 0) {
         node.reset(new ThrusterTortugaNode(argc, argv, 10));
-    }else{
-        ROS_ERROR("the passed in arguments to thruster node (%s) doesn't match anything that makes sense..\n", argv[1]); 
-        exit(1);
-    }
+    //}else{
+        //ROS_ERROR("the passed in arguments to thruster node (%s) doesn't match anything that makes sense..\n", argv[1]); 
+        //exit(1);
+    //}
 
     while (ros::ok()){
         node->update();
